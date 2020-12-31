@@ -1,5 +1,9 @@
 import React from 'react';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ja';
 import { AppProps } from 'next/app';
+
+dayjs.locale('ja');
 
 // _document.tsx：最終的に出力するHTMLファイルの設定ができるファイル
 // _app.tsx: Routeコンポーネントをラップする特殊なコンポーネントファイル
