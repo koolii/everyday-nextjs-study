@@ -1,4 +1,5 @@
 import React from 'react';
+import { GetServerSideProps } from 'next';
 // import { useRouter } from 'next/router';
 
 // const Greeting: React.FC = () => {
@@ -15,4 +16,7 @@ interface Props {
 const Greeting: React.FC<Props> = ({ name }) => <div>Hello {name}</div>;
 
 export default Greeting;
-export const getServerSideProps = (): { props: Props } => ({ props: { name: 'koolii' } });
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => ({
+  props: { name: query.name },
+});
